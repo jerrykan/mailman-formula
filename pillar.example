@@ -1,0 +1,32 @@
+mailman:
+  config:
+    # MTA (one of 'Manual', 'Postfix', or 'None')
+    mta: None
+    # Default URL pattern
+    url_pattern: 'http://%s/mailman/'
+    # Default URL host
+    url_host: lists.example.com
+    # Default email host
+    email_host: lists.jerrykan.com
+    # Extra mailman configuration settings
+    extra_conf: |
+      PRIVATE_ARCHIVE_URL = '/mailman/private'
+
+  lists:
+    # Domain the lists belong to
+    example.org:
+      # List name
+      activelist:
+        # List admin email address
+        admin: sysadmin@example.org
+        # hostname for web interface (defaults to domain)
+        urlhost: www.example.org
+        # domain of list email address (defaults to domain)
+        emailhost: lists.example.org
+        # Optional password (if no password provided, one will be generated and
+        #   stored in the graint 'mailman:admin_password_<list_name>'
+        password: 123sekret!
+      
+      deadlist:
+        # Ensure list is removed (archives will remain)
+        absent: True

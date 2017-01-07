@@ -1,0 +1,8 @@
+mailman:
+  package: mailman
+
+  conf_file: /etc/mailman/mm_cfg.py
+  lists_dir: /var/lib/mailman/lists
+
+  newlist_bin: /usr/sbin/newlist
+  rmlist_bin: /usr/sbin/rmlist

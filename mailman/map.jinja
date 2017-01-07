@@ -1,0 +1,3 @@
+{%- import_yaml "mailman/defaults.yaml" as defaults -%}
+
+{%- set mailman = salt['pillar.get']('mailman:lookup', defaults.mailman, merge=True) -%}
