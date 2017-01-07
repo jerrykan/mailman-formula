@@ -3,6 +3,8 @@ mailman:
 
   conf_file: /etc/mailman/mm_cfg.py
   lists_dir: /var/lib/mailman/lists
+  lists_conf_dir: /etc/mailman/lists_conf
 
   newlist_bin: /usr/sbin/newlist
   rmlist_bin: /usr/sbin/rmlist
+  config_list_bin: /usr/sbin/config_list

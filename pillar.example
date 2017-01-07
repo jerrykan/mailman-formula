@@ -26,7 +26,17 @@ mailman:
         # Optional password (if no password provided, one will be generated and
         #   stored in the graint 'mailman:admin_password_<list_name>'
         password: 123sekret!
-      
+        # Configure the list settings. Available options can be viewed by
+        #   running the following command on the mailman server:
+        #     config_list -o - <listname>
+        config:
+          real_name: ActiveList
+          reply_goes_to_list: True
+          # Set the value to None to not manage the setting and use the
+          #   currently configured value. Useful if you want to manage certain
+          #   settings via the web interface instead.
+          ban_list: None
+
       deadlist:
         # Ensure list is removed (archives will remain)
         absent: True
