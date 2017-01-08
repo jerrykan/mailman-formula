@@ -51,10 +51,11 @@ mailman-config_file-{{ name }}:
         config: {{ cfg.get('config', {})|json }}
 
 mailman-list_config-{{ name }}:
-  cmd.wait:
+  cmd.run:
     - name: {{ mailman.config_list_bin }} -i {{ conf_file }} {{ name }}
     - onlyif: test -f {{ mailman.lists_dir }}/{{ name }}/config.pck
-    - watch:
+    - onchanges:
+      - cmd: mailman-newlist-{{ name }}
       - file: mailman-config_file-{{ name }}
 
 {%-     endif %}
