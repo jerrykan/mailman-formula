@@ -1,5 +1,6 @@
 mailman:
   package: mailman
+  service: mailman
 
   conf_file: /etc/mailman/mm_cfg.py
   lists_dir: /var/lib/mailman/lists

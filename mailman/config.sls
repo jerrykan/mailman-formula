@@ -10,4 +10,6 @@ mailman-conf:
     - template: jinja
     - require:
       - pkg: mailman-package
+    - watch_in:
+      - module: mailman-reload
 
