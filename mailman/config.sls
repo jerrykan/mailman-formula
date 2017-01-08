@@ -9,5 +9,5 @@ mailman-conf:
     - source: salt://mailman/files/mm_cfg.py.jinja
     - template: jinja
     - require:
-      - pkg: mailman
+      - pkg: mailman-package
 
