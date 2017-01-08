@@ -15,6 +15,11 @@ mailman:
   lists:
     # Domain the lists belong to
     example.org:
+      # A mailman list needs to be created otherwise the mailman service will
+      #   not start.
+      mailman:
+        admin: sysadmin@example.org
+
       # List name
       activelist:
         # List admin email address
